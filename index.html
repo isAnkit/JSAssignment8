@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JS Assignment 8</title>
+  </head>
+  <body>
+    <pre>
+
+        <center><h1> JS : Maps And Sets</h1></center>
+
+        <h2>1. Problem 1.</h2>
+
+            You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+            Your task is to remove all the duplicate occurrences of characters in the string.
+
+            Input:
+            abcadeecfb
+
+            Output:
+            abcdef
+
+        >> Answer
+
+        <textarea>
+            
+          
+          var x = "abcadeecfb";
+         console.log([...new Set(x)].join(""));
+          
+        </textarea>
+    
+    <h2> 2. Problem 2.</h2>
+
+     You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+    
+      Input:
+      abcadeecfb
+      
+      Output:
+      a=2
+      b=2
+      c=2
+      d=1
+      e=2
+      f=1
+    
+    >> Answer
+
+       <textarea>
+    const x ='abcadeecfb'
+    function map(){
+        const y = new Map();
+        x.split('').forEach((element)=>{
+            if(y.has(element)){
+                y.set(element,y.get(element)+1)
+            }
+            else{
+                y.set(element,1)
+            }
+        });
+        x.split('').forEach((i)=>{
+            if(y.has(i) && y.get(i)!=0){
+                console.log(i+"="+y.get(i)+' ');
+                y.set(i,0)
+            };
+        });
+    };
+    map(x)
+    </textarea>
+    
+    </pre>
+  </body>
+</html>
